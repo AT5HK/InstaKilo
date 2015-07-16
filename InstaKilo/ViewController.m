@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "CustomCollectionViewCell.h"
 
-@interface ViewController ()
+@interface ViewController () <UICollectionViewDataSource>
 
 @end
 
@@ -19,9 +20,23 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - collectionView datasource methods
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 10;
 }
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.cellPhoto.image = [UIImage imageNamed:[NSString stringWithFormat:@"space%d", indexPath.row]];
+    
+    
+    return cell;
+}
+
 
 @end

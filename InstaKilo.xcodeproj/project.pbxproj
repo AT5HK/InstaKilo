@@ -14,6 +14,8 @@
 		508A0EF51B57ED8200744ED2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 508A0EF41B57ED8200744ED2 /* Images.xcassets */; };
 		508A0EF81B57ED8200744ED2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 508A0EF61B57ED8200744ED2 /* LaunchScreen.xib */; };
 		508A0F041B57ED8200744ED2 /* InstaKiloTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 508A0F031B57ED8200744ED2 /* InstaKiloTests.m */; };
+		508A0F0F1B57F03300744ED2 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 508A0F0E1B57F03300744ED2 /* CustomCollectionViewCell.m */; };
+		508A0F121B57F27900744ED2 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508A0F111B57F27900744ED2 /* CollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		508A0EFD1B57ED8200744ED2 /* InstaKiloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaKiloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		508A0F021B57ED8200744ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		508A0F031B57ED8200744ED2 /* InstaKiloTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaKiloTests.m; sourceTree = "<group>"; };
+		508A0F0D1B57F03300744ED2 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
+		508A0F0E1B57F03300744ED2 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		508A0F101B57F27900744ED2 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		508A0F111B57F27900744ED2 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,10 @@
 				508A0EEC1B57ED8200744ED2 /* AppDelegate.m */,
 				508A0EEE1B57ED8200744ED2 /* ViewController.h */,
 				508A0EEF1B57ED8200744ED2 /* ViewController.m */,
+				508A0F0D1B57F03300744ED2 /* CustomCollectionViewCell.h */,
+				508A0F0E1B57F03300744ED2 /* CustomCollectionViewCell.m */,
+				508A0F101B57F27900744ED2 /* CollectionViewController.h */,
+				508A0F111B57F27900744ED2 /* CollectionViewController.m */,
 				508A0EF11B57ED8200744ED2 /* Main.storyboard */,
 				508A0EF41B57ED8200744ED2 /* Images.xcassets */,
 				508A0EF61B57ED8200744ED2 /* LaunchScreen.xib */,
@@ -222,6 +232,8 @@
 				508A0EF01B57ED8200744ED2 /* ViewController.m in Sources */,
 				508A0EED1B57ED8200744ED2 /* AppDelegate.m in Sources */,
 				508A0EEA1B57ED8200744ED2 /* main.m in Sources */,
+				508A0F121B57F27900744ED2 /* CollectionViewController.m in Sources */,
+				508A0F0F1B57F03300744ED2 /* CustomCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
