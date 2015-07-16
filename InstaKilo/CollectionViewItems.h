@@ -20,4 +20,8 @@ typedef NS_ENUM(NSUInteger, subject) {
 @property (nonatomic) NSArray *imageSection1;
 @property (nonatomic) NSArray *imageSection2;
 @property (nonatomic) NSArray *imageSection3;
+
+-(NSString*)headerSubject:(int)currentSubject;
+-(NSArray*)reorderBySubject:(NSArray*)arrayOfSections;
+-(NSArray*)reorderByLocation:(NSArray*)arrayOfSections;
 @end

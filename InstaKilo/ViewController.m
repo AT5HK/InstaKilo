@@ -9,10 +9,14 @@
 #import "ViewController.h"
 #import "CustomCollectionViewCell.h"
 #import "CollectionViewItems.h"
+#import "HeaderView.h"
 
 @interface ViewController () <UICollectionViewDataSource>
 
 @property (nonatomic) CollectionViewItems *collectionViewItems;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedContorl;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic) BOOL subjectOrLocation;
 @end
 
 @implementation ViewController
@@ -37,9 +41,41 @@
     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
     NSArray *sectionsArray = self.collectionViewItems.arrayOfSections[indexPath.section];
-    cell.cellPhoto.image = sectionsArray[indexPath.row];
-    NSLog(@"current section: %d",indexPath.section);
+    cell.cellPhoto.image = sectionsArray[indexPath.row][@"image"];
+    
+
     return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath{
+//    NSLog(@"indexpath section: %@", indexPath);
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]){
+        HeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                                    withReuseIdentifier:@"Header" forIndexPath:indexPath];
+        headerView.headerTitle.text = [self.collectionViewItems headerSubject:indexPath.section];
+        return headerView;
+    }
+    return nil;
+}
+
+#pragma mark - UISegemented Control
+
+-(IBAction)locationOrSubject:(id)sender {
+    NSInteger selectedSegment = self.segmentedContorl.selectedSegmentIndex;
+    NSLog(@"sd");
+    if (selectedSegment) {
+        NSLog(@"by subject");
+        self.collectionViewItems.arrayOfSections = [self.collectionViewItems reorderBySubject:self.collectionViewItems.arrayOfSections];
+        self.subjectOrLocation = YES;
+    }
+    else{
+        NSLog(@"by location");
+        self.collectionViewItems.arrayOfSections = [self.collectionViewItems reorderByLocation:self.collectionViewItems.arrayOfSections];
+        self.subjectOrLocation = NO;
+    }
+    [self.collectionView reloadData];
 }
 
 

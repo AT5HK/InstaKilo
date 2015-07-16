@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HeaderView.h
 //  InstaKilo
 //
 //  Created by Auston Salvana on 7/16/15.
@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface HeaderView : UICollectionReusableView
+
+@property (weak, nonatomic) IBOutlet UILabel *headerTitle;
 
 @end
-
