@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CollectionViewItems.h"
 
 @interface CustomCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *cellPhoto;
-@property (nonatomic) NSString *subject;
+@property (nonatomic) subject *subject;
 @end

@@ -8,33 +8,37 @@
 
 #import "ViewController.h"
 #import "CustomCollectionViewCell.h"
+#import "CollectionViewItems.h"
 
 @interface ViewController () <UICollectionViewDataSource>
 
+@property (nonatomic) CollectionViewItems *collectionViewItems;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.collectionViewItems = [[CollectionViewItems alloc]init];
 }
 
 #pragma mark - collectionView datasource methods
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    NSArray *sectionImageArray = self.collectionViewItems.arrayOfSections[section];
+    return sectionImageArray.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return self.collectionViewItems.arrayOfSections.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.cellPhoto.image = [UIImage imageNamed:[NSString stringWithFormat:@"space%d", indexPath.row]];
     
-    
+    NSArray *sectionsArray = self.collectionViewItems.arrayOfSections[indexPath.section];
+    cell.cellPhoto.image = sectionsArray[indexPath.row];
+    NSLog(@"current section: %d",indexPath.section);
     return cell;
 }
 
